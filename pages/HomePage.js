@@ -2,7 +2,6 @@ import Navbar from "../components/Navbar";
 import SocialMedia from "../components/SocialMedia";
 import Image from "next/image";
 import davidlarge from "../src/assets/davidlarge.png";
-import styles from "../styles/pages/_homepage.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendar, faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import {
@@ -10,6 +9,7 @@ import {
   faInstagram,
   faLinkedinIn,
 } from "@fortawesome/free-brands-svg-icons";
+import styles from "../styles/pages/_homepage.module.scss";
 
 function HomePage() {
   return (
