@@ -1,0 +1,49 @@
+@use "../abstracts" as *;
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 8rem 3.5rem;
+  background-color: $primary;
+  min-height: 100vh;
+}
+
+.socialMedia,
+.infos {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.info {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.icon {
+  color: #fff;
+  font-size: 2rem;
+}
+
+.title,
+.socialMedia,
+.infos,
+.presentation {
+  position: relative;
+  z-index: 1;
+}
+
+.highlight {
+  color: $text2;
+}
+
+.image {
+  position: absolute;
+  bottom: 0;
+  right: 1rem;
+  opacity: 0.5;
+  max-width: 80vw;
+  z-index: 0;
+}
