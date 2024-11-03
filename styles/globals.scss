@@ -60,7 +60,8 @@ b,
 strong,
 i,
 u,
-em {
+em,
+label {
   font-family: "Open Sans", sans-serif;
   color: $text1;
   font-size: $p-mobile;
@@ -69,6 +70,16 @@ em {
   @include medium {
     font-size: $p-desktop;
   }
+}
+
+input,
+textarea {
+  font-family: "Open Sans", sans-serif;
+  font-size: $p-mobile;
+}
+
+textarea {
+  resize: none;
 }
 
 ul {

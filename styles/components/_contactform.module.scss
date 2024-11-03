@@ -1,0 +1,51 @@
+@use "../abstracts" as *;
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  background-color: $tertiary500;
+  padding: 2rem;
+}
+
+.row {
+  position: relative;
+}
+
+// .label {
+//   position: absolute;
+//   top: 1rem;
+//   left: 2rem;
+// }
+
+.input {
+  background-color: $tertiary500;
+  width: 100%;
+  height: 5rem;
+  padding: 1rem 2rem;
+  border: 0.1rem solid $tertiary100;
+  color: #fff;
+}
+
+.textarea {
+  @extend .input;
+  height: 10rem;
+}
+
+.icon {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  width: 3rem;
+  height: 3rem;
+  color: #fff;
+}
+
+.error {
+  color: red;
+  font-size: 1.2rem;
+}
+
+.button {
+  width: 20rem;
+}
