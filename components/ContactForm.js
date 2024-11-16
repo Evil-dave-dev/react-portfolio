@@ -8,7 +8,6 @@ import { useForm } from "react-hook-form";
 import { useState } from "react";
 import Button from "./Button";
 import styles from "../styles/components/_contactform.module.scss";
-import { width } from "@fortawesome/free-brands-svg-icons/fa42Group";
 
 const Input = ({
   label,
@@ -121,7 +120,11 @@ function ContactForm() {
   };
 
   return (
-    <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
+    <form
+      className={styles.form}
+      autocomplete="off"
+      onSubmit={handleSubmit(onSubmit)}
+    >
       <Input
         label="nom"
         register={register}
@@ -150,14 +153,7 @@ function ContactForm() {
       />
       <div className={styles.button}>
         <Button disabled={isSubmitting} type="submit">
-          {loading ? (
-            <FontAwesomeIcon
-              icon={faSpinner}
-              style={{ width: "3rem", animation: "spin 1s linear infinite" }}
-            />
-          ) : (
-            "envoyer"
-          )}
+          {loading ? "envoi..." : "envoyer"}
         </Button>
       </div>
     </form>
