@@ -1,83 +1,150 @@
 import {
   faCheckCircle,
   faExclamationCircle,
+  faSpinner,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import styles from "../styles/components/_contactform.module.scss";
-import Button from "./Button";
+import { useForm } from "react-hook-form";
 import { useState } from "react";
+import Button from "./Button";
+import styles from "../styles/components/_contactform.module.scss";
+
+const Input = ({
+  label,
+  register,
+  required,
+  errors,
+  watch,
+  pattern,
+  type = "input",
+}) => {
+  const value = watch(label);
+  return (
+    <div className={styles.row}>
+      <label className={styles.label}>{label}</label>
+      {type === "textarea" ? (
+        <textarea
+          className={`${styles.textarea} ${
+            errors[label] ? styles.input_error : ""
+          }`}
+          {...register(label, {
+            required: `${label} obligatoire`,
+            pattern: pattern,
+          })}
+          aria-invalid={errors[label] ? "true" : "false"}
+        />
+      ) : (
+        <input
+          className={`${styles.input} ${
+            errors[label] ? styles.input_error : ""
+          }`}
+          {...register(label, {
+            required: `${label} obligatoire`,
+            pattern: pattern,
+          })}
+          aria-invalid={errors[label] ? "true" : "false"}
+        />
+      )}
+
+      {errors[label]?.type === "required" ? (
+        <>
+          <FontAwesomeIcon
+            icon={faExclamationCircle}
+            className={`${styles.icon} ${styles.icon_error}`}
+          />
+          <small className={styles.error}>{`${errors[label].message}`}</small>
+        </>
+      ) : errors[label]?.type === "pattern" ? (
+        <>
+          <FontAwesomeIcon
+            icon={faExclamationCircle}
+            className={`${styles.icon} ${styles.icon_error}`}
+          />
+          <small className={styles.error}>{`${errors[label].message}`}</small>
+        </>
+      ) : (
+        value && (
+          <FontAwesomeIcon
+            icon={faCheckCircle}
+            className={`${styles.icon} ${
+              errors[label] ? "" : styles.icon_success
+            }`}
+          />
+        )
+      )}
+    </div>
+  );
+};
 
 function ContactForm() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+    watch,
+    reset,
+  } = useForm({
+    mode: "onChange",
+    reValidateMode: "onChange",
   });
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Formulaire envoyé :", formData);
-  };
+  const onSubmit = async (formData) => {
+    setLoading(true);
 
-  const handleClick = () => {
-    console.log("Button clicked!");
+    // console.log("Formulaire envoyé :", formData);
+    try {
+      const reponse = await fetch(
+        "https://react-portfolio-backend-rho.vercel.app/send-email",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData),
+        }
+      );
+      const data = await reponse.json();
+      console.log("réponse serveur: ", data);
+      reset();
+    } catch (error) {
+      console.error("erreur envoi" + error);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
-    <form className={styles.form} onSubmit={handleSubmit}>
-      <div className={styles.row}>
-        <label className={styles.label} htmlFor="name">
-          nom
-        </label>
-        <input
-          className={styles.input}
-          type="text"
-          id="name"
-          name="name"
-          value={formData.name}
-          onChange={handleChange}
-        />
-        {/* <FontAwesomeIcon icon={faCheckCircle} className={styles.icon} />
-        <FontAwesomeIcon icon={faExclamationCircle} className={styles.icon} /> */}
-        <small className={styles.error}>error</small>
-      </div>
-      <div className={styles.row}>
-        <label className={styles.label} htmlFor="email">
-          email
-        </label>
-        <input
-          className={styles.input}
-          type="email"
-          id="email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-        />
-        {/* <FontAwesomeIcon icon={faCheckCircle} className={styles.icon} />
-        <FontAwesomeIcon icon={faExclamationCircle} className={styles.icon} /> */}
-        <small className={styles.error}>error</small>
-      </div>
-      <div className={styles.row}>
-        <label className={styles.label} htmlFor="message">
-          message
-        </label>
-        <textarea
-          className={styles.textarea}
-          id="message"
-          name="message"
-          value={formData.message}
-          onChange={handleChange}
-        />
-        {/* <FontAwesomeIcon icon={faCheckCircle} className={styles.icon} />
-        <FontAwesomeIcon icon={faExclamationCircle} className={styles.icon} /> */}
-        <small className={styles.error}>error</small>
-      </div>
+    <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
+      <Input
+        label="nom"
+        register={register}
+        required
+        errors={errors}
+        watch={watch}
+      />
+      <Input
+        label="email"
+        register={register}
+        required
+        errors={errors}
+        watch={watch}
+        pattern={{
+          value: /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/,
+          message: "Veuillez entrer un email valide",
+        }}
+      />
+      <Input
+        label="message"
+        register={register}
+        required
+        errors={errors}
+        watch={watch}
+        type="textarea"
+      />
       <div className={styles.button}>
-        <Button label="submit" onClick={handleClick} />
+        <Button disabled={isSubmitting}>
+          {loading ? <FontAwesomeIcon icon={faSpinner} /> : "envoyer"}
+        </Button>
       </div>
     </form>
   );

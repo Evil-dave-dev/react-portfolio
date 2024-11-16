@@ -8,7 +8,6 @@ function ProjectsPage() {
       <Navbar />
       <main className={styles.main}>
         <h1>Projects Page</h1>
-        <Link href="/">Return to HomePage</Link>
       </main>
     </>
   );

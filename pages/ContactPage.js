@@ -10,7 +10,6 @@ function ContactPage() {
       <main className={styles.main}>
         <h1>ContactPage</h1>
         <ContactForm />
-        <Link href="/">Return to HomePage</Link>
       </main>
     </>
   );

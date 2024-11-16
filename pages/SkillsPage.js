@@ -8,7 +8,6 @@ function SkillsPage() {
       <Navbar />
       <main className={styles.main}>
         <h1>Skills Page</h1>
-        <Link href="/">Return to HomePage</Link>
       </main>
     </>
   );
