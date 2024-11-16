@@ -3,20 +3,23 @@
 .form {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 4rem;
   background-color: $tertiary500;
-  padding: 2rem;
+  padding: 4rem;
+}
+
+.label {
+  position: absolute;
+  top: 1rem;
+  left: 2rem;
+  background-color: $tertiary500;
+  padding: 0 1rem;
+  transition: all 0.3s;
 }
 
 .row {
   position: relative;
 }
-
-// .label {
-//   position: absolute;
-//   top: 1rem;
-//   left: 2rem;
-// }
 
 .input {
   background-color: $tertiary500;
@@ -28,6 +31,13 @@
   &_error {
     border-color: $danger;
   }
+  &:focus + .label {
+    transform: scale(0.8) translate(-1.5rem, -2.5rem);
+  }
+}
+
+.focus {
+  transform: scale(0.8) translate(-1.5rem, -2.5rem);
 }
 
 .textarea {
@@ -38,7 +48,7 @@
 .icon {
   position: absolute;
   right: 1rem;
-  top: 3rem;
+  top: 1rem;
   width: 3rem;
   height: 3rem;
   color: #fff;

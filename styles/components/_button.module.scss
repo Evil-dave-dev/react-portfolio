@@ -10,6 +10,9 @@
   font-weight: 600;
   padding: 1.2rem 2.8rem;
   border-radius: 1rem;
+  box-shadow: none !important;
+  outline: none;
+  appearance: none;
   &:disabled {
     opacity: 0.5;
     cursor: not-allowed;

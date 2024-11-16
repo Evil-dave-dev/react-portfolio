@@ -8,6 +8,7 @@ import { useForm } from "react-hook-form";
 import { useState } from "react";
 import Button from "./Button";
 import styles from "../styles/components/_contactform.module.scss";
+import { width } from "@fortawesome/free-brands-svg-icons/fa42Group";
 
 const Input = ({
   label,
@@ -21,9 +22,9 @@ const Input = ({
   const value = watch(label);
   return (
     <div className={styles.row}>
-      <label className={styles.label}>{label}</label>
       {type === "textarea" ? (
         <textarea
+          id={label}
           className={`${styles.textarea} ${
             errors[label] ? styles.input_error : ""
           }`}
@@ -35,6 +36,7 @@ const Input = ({
         />
       ) : (
         <input
+          id={label}
           className={`${styles.input} ${
             errors[label] ? styles.input_error : ""
           }`}
@@ -45,7 +47,12 @@ const Input = ({
           aria-invalid={errors[label] ? "true" : "false"}
         />
       )}
-
+      <label
+        className={`${styles.label} ${value ? styles.focus : ""}`}
+        htmlFor={label}
+      >
+        {label}
+      </label>
       {errors[label]?.type === "required" ? (
         <>
           <FontAwesomeIcon
@@ -142,8 +149,15 @@ function ContactForm() {
         type="textarea"
       />
       <div className={styles.button}>
-        <Button disabled={isSubmitting}>
-          {loading ? <FontAwesomeIcon icon={faSpinner} /> : "envoyer"}
+        <Button disabled={isSubmitting} type="submit">
+          {loading ? (
+            <FontAwesomeIcon
+              icon={faSpinner}
+              style={{ width: "3rem", animation: "spin 1s linear infinite" }}
+            />
+          ) : (
+            "envoyer"
+          )}
         </Button>
       </div>
     </form>
