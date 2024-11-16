@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Navbar from "../components/Navbar";
 import styles from "../styles/pages/_projectspage.module.scss";
 
