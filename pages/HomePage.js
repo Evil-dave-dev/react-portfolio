@@ -1,14 +1,8 @@
 import Navbar from "../components/Navbar";
-import SocialMedia from "../components/SocialMedia";
 import Image from "next/image";
 import davidlarge from "../src/assets/davidlarge.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendar, faLocationDot } from "@fortawesome/free-solid-svg-icons";
-import {
-  faGithub,
-  faInstagram,
-  faLinkedinIn,
-} from "@fortawesome/free-brands-svg-icons";
 import styles from "../styles/pages/_homepage.module.scss";
 
 function HomePage() {
@@ -44,23 +38,7 @@ function HomePage() {
           évoluer en tant que développeur front-end. Et je cherche également à
           me perfectionner sur les frameworks de javascript.
         </p>
-        <div className={styles.socialMedia}>
-          <SocialMedia
-            icon={faGithub}
-            href="https://github.com/Evil-dave-dev"
-            label="github"
-          />
-          <SocialMedia
-            icon={faInstagram}
-            href="https://www.instagram.com/david_stevenoot/"
-            label="instagram"
-          />
-          <SocialMedia
-            icon={faLinkedinIn}
-            href="https://www.linkedin.com/in/david-stevenoot-363b6411a/"
-            label="linkedin"
-          />
-        </div>
+
         <div className={styles.image}>
           <Image src={davidlarge} alt="david" priority />
         </div>
