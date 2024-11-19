@@ -1,27 +1,61 @@
 import styles from "../styles/pages/_skillspage.module.scss";
 import Navbar from "../components/Navbar";
+import HtmlIcon from "../components/icons/HtmlIcon";
+import CssIcon from "../components/icons/CssIcon";
+import JavascriptIcon from "../components/icons/JavascriptIcon";
+import ReactIcon from "../components/icons/ReactIcon";
+import NodejsIcon from "../components/icons/NodejsIcon";
+import ExpressIcon from "../components/icons/ExpressIcon";
+import MongodbIcon from "../components/icons/MongodbIcon";
 
 function SkillsPage() {
   const skills = {
     frontend: [
-      { link: "https://developer.mozilla.org/fr/docs/Web/HTML", label: "HTML" },
-      { link: "https://developer.mozilla.org/fr/docs/Web/CSS", label: "CSS" },
+      {
+        link: "https://developer.mozilla.org/fr/docs/Web/HTML",
+        label: "HTML",
+        icon: <HtmlIcon size={40} />,
+      },
+      {
+        link: "https://developer.mozilla.org/fr/docs/Web/CSS",
+        label: "CSS",
+        icon: <CssIcon size={40} />,
+      },
       {
         link: "https://developer.mozilla.org/fr/docs/Web/JavaScript",
         label: "JavaScript",
+        icon: <JavascriptIcon size={40} />,
       },
-      { link: "/", label: "React" },
+      { link: "/", label: "React", icon: <ReactIcon size={40} /> },
     ],
     backend: [
-      { link: "https://nodejs.org/fr", label: "Node JS" },
-      { link: "https://expressjs.com/fr/", label: "Express JS" },
-      { link: "https://www.mongodb.com/fr-fr", label: "MongoDB" },
+      {
+        link: "https://nodejs.org/fr",
+        label: "Node JS",
+        icon: <NodejsIcon size={40} />,
+      },
+      {
+        link: "https://expressjs.com/fr/",
+        label: "Express JS",
+        icon: <ExpressIcon size={40} />,
+      },
+      {
+        link: "https://www.mongodb.com/fr-fr",
+        label: "MongoDB",
+        icon: <MongodbIcon size={40} />,
+      },
     ],
   };
 
-  const Skill = ({ link, label }) => (
+  const Skill = ({ link, label, icon }) => (
     <li>
-      <a href={link} target="_blank" rel="noopener noreferrer">
+      <a
+        href={link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={styles.link}
+      >
+        {icon}
         {label}
       </a>
     </li>
@@ -30,7 +64,7 @@ function SkillsPage() {
   const SkillSection = ({ title, skills }) => (
     <section>
       <h3>{title}</h3>
-      <ul>
+      <ul className={styles.links}>
         {skills.map((skills, index) => (
           <Skill key={index} {...skills} />
         ))}

@@ -122,7 +122,7 @@ function ContactForm() {
   return (
     <form
       className={styles.form}
-      autocomplete="off"
+      autoComplete="off"
       onSubmit={handleSubmit(onSubmit)}
     >
       <Input

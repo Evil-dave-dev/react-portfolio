@@ -14,3 +14,19 @@
     flex-direction: row;
   }
 }
+
+.links {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: $tertiary500;
+  border: 1px solid $tertiary100;
+  border-radius: 5px;
+  padding: 1rem 2rem;
+}
