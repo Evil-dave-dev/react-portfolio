@@ -9,16 +9,15 @@
 .content {
   display: flex;
   justify-content: flex-start;
-  background-color: $tertiary500;
+  background-color: hsl(var(--card));
   padding: 0 3.5rem;
 }
 
 .link {
   display: block;
-  color: $text1;
   padding: 2rem;
 }
 
 .activeLink {
-  background-color: black;
+  background-color: hsl(var(--accent));
 }

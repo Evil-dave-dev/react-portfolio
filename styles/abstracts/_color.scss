@@ -1,0 +1,29 @@
+:root {
+  // ### Couleurs de base :
+  --background: 216 13% 15%;
+  --foreground: 219 18% 71%;
+  // ### Couleurs "atténuées" (Muted):
+  --muted: 216 12% 19%;
+  --muted-foreground: 216 12% 69%;
+  // ### Popover (bulles d’information ou menus contextuels) :
+  --popover: 216 13% 12%;
+  --popover-foreground: 219 18% 81%;
+  // ### Card (cartes ou panneaux) :
+  --card: 216 13% 13%;
+  --card-foreground: 219 18% 76%;
+  // ### Bordures et champs d’entrée :
+  --border: 216 3% 20%;
+  --input: 216 3% 23%;
+  // ### Couleurs principales et secondaires :
+  --primary: 219 18% 81%;
+  --primary-foreground: 219 18% 21%;
+  --secondary: 219 8% 25%;
+  --secondary-foreground: 219 8% 85%;
+  // ### Accentuation et états destructifs :
+  --accent: 216 13% 30%;
+  --accent-foreground: 216 13% 90%;
+  --destructive: 3 95% 48%;
+  --destructive-foreground: 0 0% 100%;
+  // ### Anneaux de focus :
+  --ring: 219 18% 81%;
+}

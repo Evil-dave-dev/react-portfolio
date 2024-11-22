@@ -1,7 +1,7 @@
 import {
   faCheckCircle,
+  faEnvelope,
   faExclamationCircle,
-  faSpinner,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useForm } from "react-hook-form";
@@ -153,7 +153,17 @@ function ContactForm() {
       />
       <div className={styles.button}>
         <Button disabled={isSubmitting} type="submit">
-          {loading ? "envoi..." : "envoyer"}
+          {loading ? (
+            "envoi..."
+          ) : (
+            <>
+              <FontAwesomeIcon
+                icon={faEnvelope}
+                style={{ width: "20", verticalAlign: "middle" }}
+              />{" "}
+              {"envoyer"}
+            </>
+          )}
         </Button>
       </div>
     </form>

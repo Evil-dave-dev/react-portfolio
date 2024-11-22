@@ -2,6 +2,19 @@
 
 .main {
   padding: 8rem 3.5rem;
-  background-color: $primary;
+  background-color: hsl(var(--background));
   min-height: 100vh;
+}
+
+.container {
+  display: flex;
+  gap: 2rem;
+}
+
+.project {
+  background-color: hsl(var(--card));
+  color: hsl(var(--card-foreground));
+  border: 1px solid hsl(var(--border));
+  padding: 1rem;
+  border-radius: 1rem;
 }

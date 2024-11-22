@@ -11,9 +11,8 @@ function HomePage() {
       <Navbar />
       <main className={styles.main}>
         <div className={styles.title}>
-          <h3>Hello je suis</h3>
           <h1 className={styles.highlight}>David Stevenoot</h1>
-          <h3>et je suis développeur Frontend</h3>
+          <h3>Développeur Frontend</h3>
         </div>
         <div className={styles.infos}>
           <div className={styles.info}>

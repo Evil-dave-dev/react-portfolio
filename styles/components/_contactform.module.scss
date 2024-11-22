@@ -3,18 +3,18 @@
 .form {
   display: flex;
   flex-direction: column;
-  gap: 4rem;
+  gap: 2.7rem;
 }
 
 .label {
   position: absolute;
-  top: 2rem;
+  top: 1.8rem;
   left: 2rem;
-  background-color: $tertiary500;
+  background-color: hsl(var(--card));
   padding: 0 1rem;
   transition: all 0.3s;
   @include medium {
-    top: 1.6rem;
+    top: 1.4rem;
   }
 }
 
@@ -23,14 +23,14 @@
 }
 
 .input {
-  background-color: $tertiary500;
   width: 100%;
   height: 50px;
   padding: 1rem 2rem;
-  border: 0.1rem solid $tertiary100;
-  color: #fff;
+  background-color: hsl(var(--card));
+  border: 0.1rem solid hsl(var(--input));
+  color: hsl(var(--primary));
   &_error {
-    border-color: $danger;
+    border-color: hsl(var(--destructive));
   }
   &:focus + .label {
     transform: scale(0.9) translate(-15px, -28px);
@@ -49,15 +49,15 @@
 .icon {
   position: absolute;
   right: 1rem;
-  top: 1rem;
-  width: 3rem;
-  height: 3rem;
-  color: #fff;
+  top: 1.5rem;
+  width: 2rem;
+  height: 2rem;
+  color: hsl(var(--primary));
   &_error {
-    color: $danger;
+    color: hsl(var(--destructive));
   }
   &_success {
-    color: $success;
+    color: var(--accent);
   }
 }
 
@@ -65,12 +65,13 @@
   position: absolute;
   left: 0;
   bottom: -2rem;
-  color: $danger;
+  color: hsl(var(--destructive));
   font-size: 1.4rem;
 }
 
 .button {
-  @include medium {
+  padding: 2rem 0 0;
+  @include x-small {
     width: 20rem;
   }
 }
