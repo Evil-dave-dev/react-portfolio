@@ -20,11 +20,13 @@
     gap: 2rem;
   }
   &_media {
+    background-color: hsl(var(--background));
     border: 1px solid hsl(var(--border));
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     display: flex;
+    flex-wrap: wrap;
     gap: 2rem;
-    padding: 2rem;
+    padding: 1rem 2rem;
     align-self: start;
   }
   @include small {
@@ -33,11 +35,16 @@
 }
 
 .icon {
+  fill: hsl(var(--foreground));
+  width: 3rem;
+  transition: 0.15s ease;
+}
+
+.link {
   display: block;
   cursor: pointer;
   transition: 0.15s ease;
-  &:hover {
-    color: hsl(var(--primary) / 0.9);
-    color: red;
+  &:hover > .icon {
+    fill: hsl(var(--primary) / 0.9);
   }
 }

@@ -10,15 +10,15 @@ function ContactPage() {
   const socialMedias = [
     {
       href: "https://www.linkedin.com/in/david-stevenoot-363b6411a/",
-      icon: <LinkedinIcon size={20} />,
+      icon: <LinkedinIcon size={20} className={styles.icon} />,
     },
     {
       href: "https://www.instagram.com/david_stevenoot/",
-      icon: <InstagramIcon size={20} />,
+      icon: <InstagramIcon size={20} className={styles.icon} />,
     },
     {
       href: "https://github.com/Evil-dave-dev",
-      icon: <GithubIcon size={20} />,
+      icon: <GithubIcon size={20} className={styles.icon} />,
     },
   ];
 
@@ -26,7 +26,7 @@ function ContactPage() {
     return (
       <li>
         <Link href={href}>
-          <a target="_blank" rel="noopener noreferrer" className={styles.icon}>
+          <a target="_blank" rel="noopener noreferrer" className={styles.link}>
             {icon}
           </a>
         </Link>
@@ -38,7 +38,7 @@ function ContactPage() {
     <>
       <Navbar />
       <main className={styles.main}>
-        <h2>Contact</h2>
+        <h2 style={{ marginBottom: "4rem" }}>Contact</h2>
         <div className={styles.container}>
           <div className={styles.container_form}>
             <strong>vous pouvez nous envoyer un message ici</strong>
