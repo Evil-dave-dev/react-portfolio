@@ -1,5 +1,5 @@
 import "../styles/globals.scss";
-import "../styles/abstracts/_color.scss";
+import "../styles/abstracts/_variables.scss";
 import Head from "next/head";
 
 function App({ Component, pageProps }) {

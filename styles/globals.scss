@@ -18,40 +18,31 @@ html {
 
 $font-sizes: (
   h1: (
-    $h1-mobile,
-    $h1-desktop,
+    var(--h1),
   ),
   h2: (
-    $h2-mobile,
-    $h2-desktop,
+    var(--h2),
   ),
   h3: (
-    $h3-mobile,
-    $h3-desktop,
+    var(--h3),
   ),
   h4: (
-    $h4-mobile,
-    $h4-desktop,
+    var(--h4),
   ),
   h5: (
-    $h5-mobile,
-    $h5-desktop,
+    var(--h5),
   ),
   h6: (
-    $h6-mobile,
-    $h6-desktop,
+    var(--h6),
   ),
 );
 
 @each $header, $sizes in $font-sizes {
   #{$header} {
-    font-size: nth($sizes, 1);
+    font-size: $sizes;
     font-family: "Khand", sans-serif;
     color: hsl(var(--foreground));
     margin: 0;
-    @include small {
-      font-size: nth($sizes, 2);
-    }
   }
 }
 
@@ -65,18 +56,15 @@ em,
 label {
   font-family: "Open Sans", sans-serif;
   color: hsl(var(--foreground));
-  font-size: $p-mobile;
+  font-size: var(--p);
   text-decoration: none;
   margin: 0;
-  @include medium {
-    font-size: $p-desktop;
-  }
 }
 
 input,
 textarea {
   font-family: "Open Sans", sans-serif;
-  font-size: $p-mobile;
+  font-size: var(--p);
 }
 
 textarea {

@@ -7,6 +7,7 @@ function ProjectsPage() {
       <Navbar />
       <main className={styles.main}>
         <h2 className={styles.highlight}>Projects Page</h2>
+
         <div className={styles.container}>
           <section className={styles.project}>
             <p>recipe shop</p>
