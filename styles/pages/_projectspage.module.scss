@@ -8,6 +8,7 @@
 
 .container {
   display: flex;
+  flex-wrap: wrap;
   gap: 2rem;
 }
 
@@ -19,6 +20,6 @@
   background-color: hsl(var(--card));
   color: hsl(var(--card-foreground));
   border: 1px solid hsl(var(--border));
-  padding: 2rem 4rem;
+  padding: 1rem 2rem;
   border-radius: 1rem;
 }
