@@ -1,44 +1,55 @@
 @use "../abstracts" as *;
 
 .main {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
   padding: 8rem 3.5rem;
   background-color: hsl(var(--background));
   min-height: 100vh;
 }
 
-.infos {
+.content {
   display: flex;
-  gap: 2rem;
-  align-items: center;
+  flex-wrap: wrap;
+  gap: 5rem;
+  background-color: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+  padding: 4rem;
+  border-radius: 1rem;
 }
 
-.info {
+.highlight {
+  color: hsl(var(--secondary-foreground));
+}
+
+.text {
   display: flex;
-  gap: 1rem;
-  align-items: center;
+  flex-direction: column;
+  gap: 5rem;
+  flex: 1;
 }
 
-.icon {
-  color: hsl(var(--primary));
-  width: 2.4rem;
-  height: 2.4rem;
+.title {
+  display: flex;
+  flex-direction: column;
 }
 
-.title,
-.infos,
-.presentation {
+.section {
+  margin-bottom: 1rem;
+}
+
+.imageContent {
   position: relative;
-  z-index: 1;
+  background-color: hsl(var(--primary));
+  flex: 0 1 35rem;
+  height: 50rem;
+  box-shadow: 87px -87px 78px -100px hsl(var(--primary));
 }
 
 .image {
   position: absolute;
-  bottom: 0;
-  right: 1rem;
-  opacity: 0.5;
-  max-width: 80vw;
-  z-index: 0;
+  top: -5rem;
+  width: 100%;
+  height: calc(100% + 5rem);
+  object-fit: cover;
+  object-position: center top;
+  filter: grayscale(80%);
 }

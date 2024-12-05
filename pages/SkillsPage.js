@@ -76,7 +76,7 @@ function SkillsPage() {
     <>
       <Navbar />
       <main className={styles.main}>
-        <h1>Skills Page</h1>
+        <h2 className={styles.highlight}>Skills Page</h2>
         <div className={styles.container}>
           <SkillSection title="frontend" skills={skills.frontend} />
           <SkillSection title="backend" skills={skills.backend} />

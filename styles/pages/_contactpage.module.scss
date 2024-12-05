@@ -34,6 +34,10 @@
   }
 }
 
+.highlight {
+  color: hsl(var(--secondary-foreground));
+}
+
 .icon {
   fill: hsl(var(--foreground));
   width: 3rem;

@@ -9,7 +9,7 @@
 .content {
   display: flex;
   justify-content: flex-start;
-  background-color: hsl(var(--card));
+  background-color: hsl(var(--muted));
   padding: 0 3.5rem;
 }
 
@@ -19,5 +19,5 @@
 }
 
 .activeLink {
-  background-color: hsl(var(--accent));
+  background-color: hsl(var(--background));
 }

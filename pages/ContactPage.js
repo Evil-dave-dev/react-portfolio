@@ -38,7 +38,7 @@ function ContactPage() {
     <>
       <Navbar />
       <main className={styles.main}>
-        <h2 style={{ marginBottom: "4rem" }}>Contact</h2>
+        <h2 className={styles.highlight}>Contact</h2>
         <div className={styles.container}>
           <div className={styles.container_form}>
             <strong>vous pouvez nous envoyer un message ici</strong>
