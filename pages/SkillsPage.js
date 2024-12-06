@@ -1,12 +1,18 @@
+import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircleChevronRight } from "@fortawesome/free-solid-svg-icons";
+import {
+  Navbar,
+  Button,
+  HtmlIcon,
+  CssIcon,
+  JavascriptIcon,
+  ReactIcon,
+  NodejsIcon,
+  ExpressIcon,
+  MongodbIcon,
+} from "../components";
 import styles from "../styles/pages/_skillspage.module.scss";
-import Navbar from "../components/Navbar";
-import HtmlIcon from "../components/icons/HtmlIcon";
-import CssIcon from "../components/icons/CssIcon";
-import JavascriptIcon from "../components/icons/JavascriptIcon";
-import ReactIcon from "../components/icons/ReactIcon";
-import NodejsIcon from "../components/icons/NodejsIcon";
-import ExpressIcon from "../components/icons/ExpressIcon";
-import MongodbIcon from "../components/icons/MongodbIcon";
 
 function SkillsPage() {
   const skills = {
@@ -80,6 +86,15 @@ function SkillsPage() {
         <div className={styles.container}>
           <SkillSection title="frontend" skills={skills.frontend} />
           <SkillSection title="backend" skills={skills.backend} />
+        </div>
+        <div className={styles.contact}>
+          <Button>
+            <Link href="/ContactPage">
+              <a>
+                Contactez moi <FontAwesomeIcon icon={faCircleChevronRight} />
+              </a>
+            </Link>
+          </Button>
         </div>
       </main>
     </>

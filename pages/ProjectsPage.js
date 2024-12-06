@@ -1,4 +1,7 @@
-import Navbar from "../components/Navbar";
+import { Navbar, Button } from "../components";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircleChevronRight } from "@fortawesome/free-solid-svg-icons";
+import Link from "next/link";
 import styles from "../styles/pages/_projectspage.module.scss";
 
 function ProjectsPage() {
@@ -21,6 +24,15 @@ function ProjectsPage() {
             <p>hackatweet</p>
             <p>exercice de formation, pseudo twitter</p>
           </section>
+        </div>
+        <div className={styles.contact}>
+          <Button>
+            <Link href="/ContactPage">
+              <a>
+                Contactez moi <FontAwesomeIcon icon={faCircleChevronRight} />
+              </a>
+            </Link>
+          </Button>
         </div>
       </main>
     </>

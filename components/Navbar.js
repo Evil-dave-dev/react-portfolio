@@ -9,7 +9,7 @@ function Navbar() {
     { href: "/", label: "Home" },
     { href: "/SkillsPage", label: "Skills" },
     { href: "/ProjectsPage", label: "Projects" },
-    { href: "/ContactPage", label: "Contact" },
+    // { href: "/ContactPage", label: "Contact" },
   ];
 
   return (

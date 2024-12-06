@@ -1,4 +1,7 @@
-import Navbar from "../components/Navbar";
+import { Navbar, Button } from "../components";
+import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircleChevronRight } from "@fortawesome/free-solid-svg-icons";
 import styles from "../styles/pages/_homepage.module.scss";
 
 function HomePage() {
@@ -7,12 +10,12 @@ function HomePage() {
       <Navbar />
       <main className={styles.main}>
         <div className={styles.content}>
-          <div className={styles.text}>
-            <section className={styles.title}>
+          <section className={styles.text}>
+            <div className={styles.title}>
               <h1 className={styles.highlight}>David Stevenoot</h1>
               <h3>Développeur Frontend</h3>
-            </section>
-            <section className={styles.presentation}>
+            </div>
+            <div className={styles.presentation}>
               <p className={styles.section}>
                 J'ai grandi à Dunkerque, dans le Nord. Mon parcours scolaire
                 s'est terminé à la fac (licence STAPS). Suite à cela, j'ai vécu
@@ -38,11 +41,20 @@ function HomePage() {
                 front-end. Et je cherche également à me perfectionner sur les
                 frameworks de javascript.
               </p>
-            </section>
-          </div>
+            </div>
+          </section>
           <section className={styles.imageContent}>
             <img src="../davidLarge.png" alt="david" className={styles.image} />
           </section>
+        </div>
+        <div className={styles.contact}>
+          <Button>
+            <Link href="/ContactPage">
+              <a>
+                Contactez moi <FontAwesomeIcon icon={faCircleChevronRight} />
+              </a>
+            </Link>
+          </Button>
         </div>
       </main>
     </>

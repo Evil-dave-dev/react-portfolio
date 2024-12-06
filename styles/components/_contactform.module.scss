@@ -3,7 +3,7 @@
 .form {
   display: flex;
   flex-direction: column;
-  gap: 2.7rem;
+  gap: 2.8rem;
 }
 
 .label {
@@ -11,7 +11,7 @@
   top: 1.8rem;
   left: 2rem;
   background-color: hsl(var(--card));
-  padding: 0 1rem;
+  padding: 0 0.8rem;
   transition: all 0.3s;
   @include medium {
     top: 1.4rem;
@@ -25,7 +25,7 @@
 .input {
   width: 100%;
   height: 50px;
-  padding: 1rem 2rem;
+  padding: 0.8rem 2rem;
   background-color: hsl(var(--card));
   border: 0.1rem solid hsl(var(--input));
   color: hsl(var(--primary));
@@ -70,7 +70,6 @@
 }
 
 .button {
-  padding: 2rem 0 0;
   @include x-small {
     width: 20rem;
   }

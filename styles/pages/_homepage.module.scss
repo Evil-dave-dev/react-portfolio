@@ -1,7 +1,7 @@
 @use "../abstracts" as *;
 
 .main {
-  padding: 8rem 3.5rem;
+  padding: 8rem 2.8rem;
   background-color: hsl(var(--background));
   min-height: 100vh;
 }
@@ -9,10 +9,10 @@
 .content {
   display: flex;
   flex-wrap: wrap;
-  gap: 5rem;
+  gap: 4rem;
   background-color: hsl(var(--card));
   border: 1px solid hsl(var(--border));
-  padding: 4rem;
+  padding: 2rem;
   border-radius: 1rem;
 }
 
@@ -23,8 +23,8 @@
 .text {
   display: flex;
   flex-direction: column;
-  gap: 5rem;
-  flex: 1;
+  gap: 4rem;
+  flex: 1 1 30rem;
 }
 
 .title {
@@ -52,4 +52,10 @@
   object-fit: cover;
   object-position: center top;
   filter: grayscale(100%);
+}
+
+.contact {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
 }
