@@ -1,9 +1,5 @@
-import Link from "next/link";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircleChevronRight } from "@fortawesome/free-solid-svg-icons";
 import {
   Navbar,
-  Button,
   HtmlIcon,
   CssIcon,
   JavascriptIcon,
@@ -11,7 +7,9 @@ import {
   NodejsIcon,
   ExpressIcon,
   MongodbIcon,
+  Codeline,
 } from "../components";
+import ContactButton from "../components/ContactButton";
 import styles from "../styles/pages/_skillspage.module.scss";
 
 function SkillsPage() {
@@ -19,58 +17,95 @@ function SkillsPage() {
     frontend: [
       {
         link: "https://developer.mozilla.org/fr/docs/Web/HTML",
-        label: "HTML",
-        icon: <HtmlIcon size={40} />,
+        icon: <HtmlIcon size={40} className={styles.skill_icon} />,
+        presentation: (
+          <>
+            <Codeline>HTML</Codeline> est le langage de balisage que j'ai appris
+            en formation web designer
+          </>
+        ),
       },
       {
         link: "https://developer.mozilla.org/fr/docs/Web/CSS",
-        label: "CSS",
-        icon: <CssIcon size={40} />,
+        icon: <CssIcon size={40} className={styles.skill_icon} />,
+        presentation: (
+          <>
+            <Codeline>CSS</Codeline> est le langage informatique qui décrit la
+            présentation des documents HTML que j'ai découvert en meme temps que
+            le <Codeline>HTML</Codeline>
+          </>
+        ),
       },
       {
         link: "https://developer.mozilla.org/fr/docs/Web/JavaScript",
-        label: "JavaScript",
-        icon: <JavascriptIcon size={40} />,
+        icon: <JavascriptIcon size={40} className={styles.skill_icon} />,
+        presentation: (
+          <>
+            <Codeline>Javascript</Codeline> est un langage de script léger,
+            orienté objet, principalement connu comme le langage de script des
+            pages web
+          </>
+        ),
       },
-      { link: "/", label: "React", icon: <ReactIcon size={40} /> },
+      {
+        link: "/",
+        icon: <ReactIcon size={40} className={styles.skill_icon} />,
+        presentation: (
+          <>
+            <Codeline>React</Codeline> est une bibliothèque open source
+            JavaScript pour créer des interfaces utilisateurs
+          </>
+        ),
+      },
     ],
     backend: [
       {
         link: "https://nodejs.org/fr",
-        label: "Node JS",
-        icon: <NodejsIcon size={40} />,
+        icon: <NodejsIcon size={40} className={styles.skill_icon} />,
+        presentation: (
+          <>
+            <Codeline>NodeJS</Codeline> est une plateforme logicielle libre en
+            JavaScript, orientée vers les applications réseau évènementielles
+            hautement concurrentes qui doivent pouvoir monter en charge
+          </>
+        ),
       },
       {
         link: "https://expressjs.com/fr/",
-        label: "Express JS",
-        icon: <ExpressIcon size={40} />,
+        icon: <ExpressIcon size={40} className={styles.skill_icon} />,
+        presentation: (
+          <>
+            <Codeline>Express JS</Codeline> est un framework pour construire des
+            applications web basées sur Node.js
+          </>
+        ),
       },
       {
         link: "https://www.mongodb.com/fr-fr",
-        label: "MongoDB",
-        icon: <MongodbIcon size={40} />,
+        icon: <MongodbIcon size={40} className={styles.skill_icon} />,
+        presentation: (
+          <>
+            <Codeline>MongoDB</Codeline> est un système de gestion de base de
+            données orienté documents
+          </>
+        ),
       },
     ],
   };
 
-  const Skill = ({ link, label, icon }) => (
-    <li>
-      <a
-        href={link}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={styles.link}
-      >
+  const Skill = ({ icon, presentation }) => (
+    <li className={styles.skill}>
+      <span className={styles.skill_content}>
         {icon}
-        {label}
-      </a>
+        <span>{presentation}</span>
+      </span>
     </li>
   );
 
   const SkillSection = ({ title, skills }) => (
     <section>
-      <h3>{title}</h3>
-      <ul className={styles.links}>
+      <h3 className={styles.skills_title}>{title}</h3>
+      <ul className={styles.skills}>
         {skills.map((skills, index) => (
           <Skill key={index} {...skills} />
         ))}
@@ -82,20 +117,12 @@ function SkillsPage() {
     <>
       <Navbar />
       <main className={styles.main}>
-        <h2 className={styles.highlight}>Skills Page</h2>
+        <h2 className={styles.title}>Skills Page</h2>
         <div className={styles.container}>
           <SkillSection title="frontend" skills={skills.frontend} />
           <SkillSection title="backend" skills={skills.backend} />
         </div>
-        <div className={styles.contact}>
-          <Button>
-            <Link href="/ContactPage">
-              <a>
-                Contactez moi <FontAwesomeIcon icon={faCircleChevronRight} />
-              </a>
-            </Link>
-          </Button>
-        </div>
+        <ContactButton />
       </main>
     </>
   );

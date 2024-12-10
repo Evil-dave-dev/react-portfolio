@@ -3,6 +3,7 @@ const NodejsIcon = (props) => {
     <svg
       width={props.size}
       height={props.size}
+      {...props}
       viewBox="0 0 256 289"
       version="1.1"
       preserveAspectRatio="xMidYMid"

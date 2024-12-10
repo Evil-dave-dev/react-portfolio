@@ -1,0 +1,11 @@
+.main {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+}
+
+.content {
+  color: hsl(var(--primary-foreground));
+  font-size: 2.2rem;
+  font-weight: 600;
+}

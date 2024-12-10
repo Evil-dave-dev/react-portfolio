@@ -1,0 +1,11 @@
+.main {
+  display: inline-block;
+  font-family: "PT Mono", monospace;
+  background-color: hsl(var(--accent));
+  border: 1px solid hsl(var(--border));
+  color: hsl(var(--accent-foreground));
+  padding: 0.2em 0.4em;
+  letter-spacing: 0.2rem;
+  border-radius: 0.4rem;
+  font-size: var(--small);
+}

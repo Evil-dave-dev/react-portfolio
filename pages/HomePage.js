@@ -1,7 +1,5 @@
-import { Navbar, Button } from "../components";
-import Link from "next/link";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircleChevronRight } from "@fortawesome/free-solid-svg-icons";
+import { Navbar } from "../components";
+import ContactButton from "../components/ContactButton";
 import styles from "../styles/pages/_homepage.module.scss";
 
 function HomePage() {
@@ -47,15 +45,7 @@ function HomePage() {
             <img src="../davidLarge.png" alt="david" className={styles.image} />
           </section>
         </div>
-        <div className={styles.contact}>
-          <Button>
-            <Link href="/ContactPage">
-              <a>
-                Contactez moi <FontAwesomeIcon icon={faCircleChevronRight} />
-              </a>
-            </Link>
-          </Button>
-        </div>
+        <ContactButton />
       </main>
     </>
   );

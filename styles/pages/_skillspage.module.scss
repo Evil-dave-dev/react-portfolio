@@ -7,37 +7,47 @@
 }
 
 .container {
-  display: flex;
-  flex-direction: column;
-  gap: 4rem;
-  @include x-small {
-    flex-direction: row;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 3.2rem;
+  background-color: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+  padding: 1.6rem 3.2rem;
+  @include small {
+    grid-template-columns: 1fr 1fr;
   }
 }
 
-.highlight {
+.title {
+  margin-bottom: 4rem;
   color: hsl(var(--secondary-foreground));
 }
 
-.links {
+.skills {
   display: flex;
-  gap: 1.2rem;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 1.6rem;
+  &_title {
+    margin-bottom: 2.4rem;
+  }
 }
 
-.link {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  background-color: hsl(var(--card));
-  color: hsl(var(--card-foreground));
-  border: 1px solid hsl(var(--border));
-  border-radius: 5px;
-  padding: 1.6rem 3.2rem;
-}
-
-.contact {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
+.skill {
+  transition: 0.15s ease;
+  :hover {
+    background-color: sl(var(--accent));
+  }
+  &_content {
+    display: flex;
+    gap: 1.2rem;
+    background-color: hsl(var(--background));
+    border: 1px solid hsl(var(--border));
+    color: hsl(var(--card-foreground));
+    border-radius: 0.5rem;
+    padding: 1.2rem 2rem;
+    cursor: pointer;
+  }
+  &_icon {
+    flex-shrink: 0;
+  }
 }

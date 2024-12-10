@@ -3,6 +3,7 @@ const MongodbIcon = (props) => {
     <svg
       width={props.size}
       height={props.size}
+      {...props}
       viewBox="0 0 256 549"
       version="1.1"
       preserveAspectRatio="xMidYMid"

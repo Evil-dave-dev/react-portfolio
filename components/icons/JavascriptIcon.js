@@ -3,6 +3,7 @@ const JavascriptIcon = (props) => {
     <svg
       width={props.size}
       height={props.size}
+      {...props}
       viewBox="0 0 256 256"
       version="1.1"
       preserveAspectRatio="xMidYMid"

@@ -3,6 +3,7 @@ const ExpressIcon = (props) => {
     <svg
       width={props.size}
       height={props.size}
+      {...props}
       viewBox="0 0 512 149"
       version="1.1"
       preserveAspectRatio="xMidYMid"
