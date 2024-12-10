@@ -1,6 +1,7 @@
 .main {
   display: inline-block;
   font-family: "PT Mono", monospace;
+  font-weight: 400;
   background-color: hsl(var(--accent));
   border: 1px solid hsl(var(--border));
   color: hsl(var(--accent-foreground));
