@@ -10,10 +10,11 @@
   display: flex;
   flex-wrap: wrap;
   gap: 4rem;
-  background-color: hsl(var(--card));
-  border: 1px solid hsl(var(--border));
-  padding: 1.6rem 3.2rem;
-  border-radius: 1rem;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
 }
 
 .highlight {
@@ -25,11 +26,6 @@
   flex-direction: column;
   gap: 4rem;
   flex: 1 1 30rem;
-}
-
-.title {
-  display: flex;
-  flex-direction: column;
 }
 
 .section {

@@ -7,7 +7,7 @@ import styles from "../styles/components/_contactButton.module.scss";
 function ContactButton() {
   return (
     <div className={styles.main}>
-      <Button>
+      <Button animation>
         <Link href="/ContactPage">
           <span className={styles.content}>
             Contactez moi <FontAwesomeIcon icon={faCircleChevronRight} />

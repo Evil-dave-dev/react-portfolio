@@ -6,21 +6,25 @@
   min-height: 100vh;
 }
 
+.title {
+  margin-bottom: 4rem;
+  color: hsl(var(--secondary-foreground));
+}
+
+.intro {
+  margin-bottom: 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
 .container {
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 3.2rem;
-  background-color: hsl(var(--card));
-  border: 1px solid hsl(var(--border));
-  padding: 1.6rem 3.2rem;
   @include small {
     grid-template-columns: 1fr 1fr;
   }
-}
-
-.title {
-  margin-bottom: 4rem;
-  color: hsl(var(--secondary-foreground));
 }
 
 .skills {
@@ -34,18 +38,15 @@
 
 .skill {
   transition: 0.15s ease;
-  :hover {
-    background-color: sl(var(--accent));
-  }
+  background-color: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+  color: hsl(var(--card-foreground));
+  border-radius: 0.5rem;
+  padding: 1.2rem 2rem;
+  cursor: pointer;
   &_content {
     display: flex;
     gap: 1.2rem;
-    background-color: hsl(var(--background));
-    border: 1px solid hsl(var(--border));
-    color: hsl(var(--card-foreground));
-    border-radius: 0.5rem;
-    padding: 1.2rem 2rem;
-    cursor: pointer;
   }
   &_icon {
     flex-shrink: 0;

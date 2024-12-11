@@ -1,5 +1,7 @@
+import { useState } from "react";
 import {
   Navbar,
+  Modal,
   HtmlIcon,
   CssIcon,
   JavascriptIcon,
@@ -13,6 +15,8 @@ import ContactButton from "../components/ContactButton";
 import styles from "../styles/pages/_skillspage.module.scss";
 
 function SkillsPage() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const skills = {
     frontend: [
       {
@@ -94,7 +98,7 @@ function SkillsPage() {
   };
 
   const Skill = ({ icon, presentation }) => (
-    <li className={styles.skill}>
+    <li className={styles.skill} onClick={() => setIsModalOpen(true)}>
       <span className={styles.skill_content}>
         {icon}
         <span>{presentation}</span>
@@ -118,11 +122,31 @@ function SkillsPage() {
       <Navbar />
       <main className={styles.main}>
         <h2 className={styles.title}>Skills Page</h2>
+        <section className={styles.intro}>
+          <p>
+            Je suis un développeur web qui a pu travailler sur différentes
+            technos full stack, mais je suis particulièrement axé sur le{" "}
+            <strong>développement front end</strong>.
+          </p>
+          <p>
+            Sur cette page, vous pourrez voir toute la stack technique que
+            j'utilise pour mes développements.
+          </p>
+          <p>
+            Même si je travaille sur les 2 versants du développement web, mon
+            appétance va tout particulièrement vers le front end avec lequel
+            j'ai le plus d'affinité.
+          </p>
+        </section>
         <div className={styles.container}>
           <SkillSection title="frontend" skills={skills.frontend} />
           <SkillSection title="backend" skills={skills.backend} />
         </div>
         <ContactButton />
+        <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+          <h2>Contenu de la modale</h2>
+          <p>Ceci est un template</p>
+        </Modal>
       </main>
     </>
   );
