@@ -5,6 +5,14 @@ import styles from "../styles/pages/_projectspage.module.scss";
 
 function ProjectsPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalContent, setModalContent] = useState(null);
+
+  const openModal = (content) => {
+    setModalContent(content);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => setIsModalOpen(false);
 
   const projects = [
     {
@@ -34,7 +42,19 @@ function ProjectsPage() {
   ];
 
   const Project = ({ name, img, description, stack, date }) => (
-    <section className={styles.project} onClick={() => setIsModalOpen(true)}>
+    <article
+      className={styles.project}
+      role="button"
+      onClick={() =>
+        openModal(
+          <>
+            <p>{name}</p>
+            <img className={styles.modal_img} src={img} alt={name} />
+            <p>{description}</p>
+          </>
+        )
+      }
+    >
       <img className={styles.project_img} src={img} alt={name} />
       <div className={styles.project_text}>
         <p className={styles.project_title}>{name}</p>
@@ -47,7 +67,7 @@ function ProjectsPage() {
         </p>
         <p className={styles.project_date}>{date}</p>
       </div>
-    </section>
+    </article>
   );
 
   return (
@@ -56,22 +76,25 @@ function ProjectsPage() {
       <main className={styles.main}>
         <h2 className={styles.title}>Project Page</h2>
         <div className={styles.container}>
-          {projects.map((project) => (
+          {projects.map((project, index) => (
             <Project
-              key={project.name}
-              name={project.name}
-              img={project.img}
-              description={project.description}
-              stack={project.stack}
-              date={project.date}
+              key={index}
+              {...project}
+              onClick={() => openModal(project)}
+              // name={project.name}
+              // img={project.img}
+              // description={project.description}
+              // stack={project.stack}
+              // date={project.date}
             />
           ))}
         </div>
         <ContactButton />
-        <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-          <h2>Contenu de la modale</h2>
-          <p>Ceci est un template</p>
-        </Modal>
+        <Modal
+          isOpen={isModalOpen}
+          onClose={closeModal}
+          content={modalContent}
+        />
       </main>
     </>
   );

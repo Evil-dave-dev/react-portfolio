@@ -1,6 +1,6 @@
 import styles from "../styles/components/_modal.module.scss";
 
-const Modal = ({ isOpen, onClose, children }) => {
+const Modal = ({ isOpen, onClose, content }) => {
   if (!isOpen) return null;
 
   return (
@@ -9,7 +9,7 @@ const Modal = ({ isOpen, onClose, children }) => {
         className={styles.modal_content}
         onClick={(e) => e.stopPropagation()}
       >
-        {children}
+        {content}
       </div>
     </div>
   );

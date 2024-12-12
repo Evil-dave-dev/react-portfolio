@@ -63,3 +63,9 @@
     background-color: hsl(var(--accent));
   }
 }
+
+.modal_img {
+  max-height: 60rem;
+  max-width: 100%;
+  object-fit: contain;
+}
