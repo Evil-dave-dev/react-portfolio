@@ -34,7 +34,6 @@
     object-fit: contain;
   }
   &_link {
-    text-decoration: underline;
-    font-weight: 100;
+    font-size: var(--small);
   }
 }

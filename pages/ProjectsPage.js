@@ -77,30 +77,26 @@ const ProjectsPage = () => {
                     <p className={styles.modal_description}>
                       {project.description}
                     </p>
-                    <strong>
+                    <p className={styles.modal_link}>
                       lien frontend{" "}
-                      <i>
-                        <a
-                          className={styles.modal_link}
-                          href={project.frontend}
-                          target="_blank"
-                        >
-                          {project.frontend}
-                        </a>
-                      </i>
-                    </strong>
-                    <strong>
+                      <a
+                        className={styles.modal_link}
+                        href={project.frontend}
+                        target="_blank"
+                      >
+                        {project.frontend}
+                      </a>
+                    </p>
+                    <p className={styles.modal_link}>
                       lien backend{" "}
-                      <i>
-                        <a
-                          className={styles.modal_link}
-                          href={project.backend}
-                          target="_blank"
-                        >
-                          {project.backend}
-                        </a>
-                      </i>
-                    </strong>
+                      <a
+                        className={styles.modal_link}
+                        href={project.backend}
+                        target="_blank"
+                      >
+                        {project.backend}
+                      </a>
+                    </p>
                   </>
                 )
               }

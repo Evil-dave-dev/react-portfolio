@@ -64,6 +64,10 @@ label {
   margin: 0;
 }
 
+a {
+  color: hsl(var(--link));
+}
+
 input,
 textarea {
   font-family: "Open Sans", sans-serif;

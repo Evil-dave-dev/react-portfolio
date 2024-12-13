@@ -1,7 +1,5 @@
-import { useState } from "react";
 import {
   Navbar,
-  Modal,
   HtmlIcon,
   CssIcon,
   JavascriptIcon,
@@ -15,8 +13,6 @@ import ContactButton from "../components/ContactButton";
 import styles from "../styles/pages/_skillspage.module.scss";
 
 const SkillsPage = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
   const skills = {
     frontend: [
       {
@@ -98,7 +94,7 @@ const SkillsPage = () => {
   };
 
   const Skill = ({ icon, presentation }) => (
-    <li className={styles.skill} onClick={() => setIsModalOpen(true)}>
+    <li className={styles.skill}>
       <span className={styles.skill_content}>
         {icon}
         <span>{presentation}</span>
@@ -143,10 +139,6 @@ const SkillsPage = () => {
           <SkillSection title="backend" skills={skills.backend} />
         </div>
         <ContactButton />
-        <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-          <h2>Contenu de la modale</h2>
-          <p>Ceci est un template</p>
-        </Modal>
       </main>
     </>
   );

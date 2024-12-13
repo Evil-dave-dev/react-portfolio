@@ -17,28 +17,12 @@
     background: hsl(var(--popover));
     color: hsl(var(--popover-foreground));
     border: 1px solid hsl(var(--border));
+    border-radius: 1rem;
     padding: 2rem;
     overflow: scroll;
     scrollbar-width: none;
     ::-webkit-scrollbar {
-      display: none; /* Chrome, Edge, Safari */
-    }
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    p,
-    a,
-    b,
-    span,
-    strong,
-    i,
-    u,
-    em,
-    label {
-      color: inherit;
+      display: none;
     }
   }
 }
