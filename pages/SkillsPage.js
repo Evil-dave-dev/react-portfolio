@@ -14,7 +14,7 @@ import {
 import ContactButton from "../components/ContactButton";
 import styles from "../styles/pages/_skillspage.module.scss";
 
-function SkillsPage() {
+const SkillsPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const skills = {
@@ -150,6 +150,6 @@ function SkillsPage() {
       </main>
     </>
   );
-}
+};
 
 export default SkillsPage;

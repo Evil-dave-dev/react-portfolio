@@ -6,7 +6,7 @@ import GithubIcon from "../components/icons/GithubIcon";
 import Link from "next/link";
 import styles from "../styles/pages/_contactpage.module.scss";
 
-function ContactPage() {
+const ContactPage = () => {
   const socialMedias = [
     {
       href: "https://www.linkedin.com/in/david-stevenoot-363b6411a/",
@@ -53,6 +53,6 @@ function ContactPage() {
       </main>
     </>
   );
-}
+};
 
 export default ContactPage;

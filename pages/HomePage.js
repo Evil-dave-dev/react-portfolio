@@ -2,7 +2,7 @@ import { Navbar } from "../components";
 import ContactButton from "../components/ContactButton";
 import styles from "../styles/pages/_homepage.module.scss";
 
-function HomePage() {
+const HomePage = () => {
   return (
     <>
       <Navbar />
@@ -49,6 +49,6 @@ function HomePage() {
       </main>
     </>
   );
-}
+};
 
 export default HomePage;

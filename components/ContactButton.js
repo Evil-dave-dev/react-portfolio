@@ -4,7 +4,7 @@ import Button from "./Button";
 import Link from "next/link";
 import styles from "../styles/components/_contactButton.module.scss";
 
-function ContactButton() {
+const ContactButton = () => {
   return (
     <div className={styles.main}>
       <Button animation>
@@ -16,6 +16,6 @@ function ContactButton() {
       </Button>
     </div>
   );
-}
+};
 
 export default ContactButton;

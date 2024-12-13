@@ -2,16 +2,43 @@
   &_overlay {
     position: fixed;
     inset: 0;
-    background-color: hsla(216, 13%, 13%, 0.5);
+    background-color: hsla(216, 13%, 13%, 0.7);
     display: flex;
     align-items: center;
     justify-content: center;
   }
   &_content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
     width: calc(100vw - 5.6rem);
-    max-width: 90vw;
-    background: #fff;
+    max-width: 80rem;
+    max-height: 60rem;
+    background: hsl(var(--popover));
+    color: hsl(var(--popover-foreground));
+    border: 1px solid hsl(var(--border));
     padding: 2rem;
-    border-radius: 0.5rem;
+    overflow: scroll;
+    scrollbar-width: none;
+    ::-webkit-scrollbar {
+      display: none; /* Chrome, Edge, Safari */
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    a,
+    b,
+    span,
+    strong,
+    i,
+    u,
+    em,
+    label {
+      color: inherit;
+    }
   }
 }

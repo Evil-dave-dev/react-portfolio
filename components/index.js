@@ -3,6 +3,7 @@ export { default as ContactForm } from "./ContactForm";
 export { default as Navbar } from "./Navbar";
 export { default as Codeline } from "./Codeline";
 export { default as Modal } from "./Modal";
+export { default as Project } from "./Project";
 
 export { default as CssIcon } from "./icons/CssIcon";
 export { default as ExpressIcon } from "./icons/ExpressIcon";

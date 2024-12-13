@@ -1,12 +1,12 @@
+import Button from "./Button";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCheckCircle,
   faEnvelope,
   faExclamationCircle,
 } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
-import Button from "./Button";
 import styles from "../styles/components/_contactform.module.scss";
 
 const Input = ({
@@ -82,7 +82,7 @@ const Input = ({
   );
 };
 
-function ContactForm() {
+const ContactForm = () => {
   const {
     register,
     handleSubmit,
@@ -98,8 +98,6 @@ function ContactForm() {
 
   const onSubmit = async (formData) => {
     setLoading(true);
-
-    // console.log("Formulaire envoyé :", formData);
     try {
       const reponse = await fetch(
         "https://react-portfolio-backend-rho.vercel.app/send-email",
@@ -110,7 +108,6 @@ function ContactForm() {
         }
       );
       const data = await reponse.json();
-      console.log("réponse serveur: ", data);
       reset();
     } catch (error) {
       console.error("erreur envoi" + error);
@@ -168,6 +165,6 @@ function ContactForm() {
       </div>
     </form>
   );
-}
+};
 
 export default ContactForm;

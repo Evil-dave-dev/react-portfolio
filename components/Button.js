@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "../styles/components/_button.module.scss";
 
-function Button({ children, onClick, disabled, type, animation }) {
+const Button = ({ children, onClick, disabled, type, animation }) => {
   return (
     <button
       className={`${styles.main} ${animation ? styles.animation : ""}`}
@@ -12,6 +12,6 @@ function Button({ children, onClick, disabled, type, animation }) {
       {children}
     </button>
   );
-}
+};
 
 export default Button;

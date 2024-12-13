@@ -2,7 +2,7 @@ import Link from "next/link";
 import styles from "../styles/components/_navbar.module.scss";
 import { useRouter } from "next/router";
 
-function Navbar() {
+const Navbar = () => {
   const router = useRouter();
 
   const navLinks = [
@@ -28,6 +28,6 @@ function Navbar() {
       </ul>
     </div>
   );
-}
+};
 
 export default Navbar;

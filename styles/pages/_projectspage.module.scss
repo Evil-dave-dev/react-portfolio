@@ -23,49 +23,18 @@
   color: hsl(var(--secondary-foreground));
 }
 
-.project {
-  align-self: start;
-  background-color: hsl(var(--card));
-  color: hsl(var(--card-foreground));
-  border: 1px solid hsl(var(--border));
-  border-radius: 1rem;
-  overflow: hidden;
-  transition: 0.15s ease;
-  &_img {
-    width: 100%;
-    height: 30rem;
-    object-fit: cover;
-  }
-  &_text {
-    padding: 2.4rem 1.6rem;
-  }
+.modal {
   &_title {
     font-size: var(--large);
     font-weight: 700;
-    color: hsl(var(--secondary-foreground));
-    margin-bottom: 2rem;
   }
-  &_tech {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-    align-items: center;
-    font-size: var(--small);
-    font-weight: 800;
-    margin-top: 1.2rem;
+  &_img {
+    max-height: 50rem;
+    max-width: 100%;
+    object-fit: contain;
   }
-  &_date {
-    font-weight: 700;
-    color: hsl(var(--secondary-foreground));
-    margin-top: 1.6rem;
+  &_link {
+    text-decoration: underline;
+    font-weight: 100;
   }
-  :hover {
-    background-color: hsl(var(--accent));
-  }
-}
-
-.modal_img {
-  max-height: 60rem;
-  max-width: 100%;
-  object-fit: contain;
 }
