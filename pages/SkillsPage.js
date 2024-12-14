@@ -57,6 +57,16 @@ const SkillsPage = () => {
           </>
         ),
       },
+      {
+        link: "/",
+        icon: "",
+        presentation: (
+          <>
+            <Codeline>Next</Codeline> est une bibliothèque open source
+            JavaScript pour créer des interfaces utilisateurs
+          </>
+        ),
+      },
     ],
     backend: [
       {

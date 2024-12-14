@@ -9,12 +9,16 @@ const Navbar = () => {
     { href: "/", label: "Home" },
     { href: "/SkillsPage", label: "Skills" },
     { href: "/ProjectsPage", label: "Projects" },
-    // { href: "/ContactPage", label: "Contact" },
   ];
 
   return (
     <div className={styles.main}>
       <ul className={styles.content}>
+        <li>
+          <Link href="/">
+            <img src="logo.png" alt="logo" className={styles.logo} />
+          </Link>
+        </li>
         {navLinks.map((link) => (
           <li
             key={link.label}
