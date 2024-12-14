@@ -10,7 +10,11 @@ const ContactButton = () => {
       <Button animation>
         <Link href="/ContactPage">
           <span className={styles.content}>
-            Contactez moi <FontAwesomeIcon icon={faCircleChevronRight} />
+            Contactez moi{" "}
+            <FontAwesomeIcon
+              icon={faCircleChevronRight}
+              className={styles.icon}
+            />
           </span>
         </Link>
       </Button>
