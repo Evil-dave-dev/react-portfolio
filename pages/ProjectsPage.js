@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Codeline, Navbar, Modal, Project } from "../components";
+import { Navbar, Modal, Project } from "../components";
 import ContactButton from "../components/ContactButton";
 import styles from "../styles/pages/_projectspage.module.scss";
 
