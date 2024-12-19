@@ -10,10 +10,10 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.6rem;
-  @include x-small {
+  @include breakpoint(x-small) {
     grid-template-columns: 1fr 1fr;
   }
-  @include medium {
+  @include breakpoint(medium) {
     grid-template-columns: 1fr 1fr 1fr;
   }
 }

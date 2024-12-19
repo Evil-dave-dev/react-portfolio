@@ -12,7 +12,7 @@
 html {
   font-size: 55%;
   color: hsl(var(--foreground));
-  @include medium {
+  @include breakpoint(medium) {
     font-size: 62.5%;
   }
 }

@@ -13,7 +13,7 @@
   background-color: hsl(var(--card));
   padding: 0 0.8rem;
   transition: all 0.3s;
-  @include medium {
+  @include breakpoint(medium) {
     top: 1.4rem;
   }
 }
@@ -70,7 +70,7 @@
 }
 
 .button {
-  @include x-small {
+  @include breakpoint(x-small) {
     width: 20rem;
   }
 }

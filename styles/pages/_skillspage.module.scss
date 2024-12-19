@@ -22,7 +22,7 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 3.2rem;
-  @include small {
+  @include breakpoint(small) {
     grid-template-columns: 1fr 1fr;
   }
 }
