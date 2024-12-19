@@ -14,7 +14,7 @@ const Navbar = () => {
   return (
     <div className={styles.main}>
       <ul className={styles.content}>
-        <li>
+        <li className={styles.logo_content}>
           <Link href="/">
             <img src="logo.png" alt="logo" className={styles.logo} />
           </Link>
@@ -24,7 +24,7 @@ const Navbar = () => {
             key={link.label}
             className={router.pathname === link.href ? styles.activeLink : null}
           >
-            <Link href={link.href}>
+            <Link href={link.href} legacyBehavior>
               <a className={styles.link}>{link.label}</a>
             </Link>
           </li>

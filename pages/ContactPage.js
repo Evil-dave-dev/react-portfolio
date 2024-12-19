@@ -25,7 +25,7 @@ const ContactPage = () => {
   const SocialMedia = ({ href, icon }) => {
     return (
       <li>
-        <Link href={href}>
+        <Link href={href} legacyBehavior>
           <a target="_blank" rel="noopener noreferrer" className={styles.link}>
             {icon}
           </a>
