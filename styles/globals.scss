@@ -1,6 +1,5 @@
-// @import url("https://fonts.googleapis.com/css2?family=Anton&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=PT+Mono&display=swap");
-@import "~normalize.css";
 @use "./abstracts" as *;
+@import "~normalize.css";
 
 * {
   font-family: "Open Sans", sans-serif;
