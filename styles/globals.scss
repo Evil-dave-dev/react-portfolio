@@ -1,6 +1,6 @@
-@use "./abstracts" as *;
 @import url("https://fonts.googleapis.com/css2?family=Anton&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=PT+Mono&display=swap");
 @import "~normalize.css";
+@use "./abstracts" as *;
 
 * {
   font-family: "Open Sans", sans-serif;
@@ -39,7 +39,7 @@ $font-sizes: (
 @each $header, $sizes in $font-sizes {
   #{$header} {
     font-size: $sizes;
-    font-family: "Anton", serif;
+    font-family: "Anton", sans-serif;
     color: hsl(var(--foreground));
     margin: 0;
   }
