@@ -1,4 +1,4 @@
-@use "../abstracts" as *;
+@use "../breakpoints" as *;
 
 .main {
   padding: 8rem 2.8rem;
@@ -25,15 +25,11 @@
 
 .modal {
   &_title {
-    font-size: var(--large);
     font-weight: 700;
   }
   &_img {
     max-height: 50rem;
     max-width: 100%;
     object-fit: contain;
-  }
-  &_link {
-    font-size: var(--small);
   }
 }

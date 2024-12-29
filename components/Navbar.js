@@ -1,6 +1,7 @@
 import Link from "next/link";
-import styles from "../styles/components/_navbar.module.scss";
 import { useRouter } from "next/router";
+import { useState } from "react";
+import styles from "../styles/components/_navbar.module.scss";
 
 const Navbar = () => {
   const router = useRouter();
@@ -10,6 +11,8 @@ const Navbar = () => {
     { href: "/SkillsPage", label: "Skills" },
     { href: "/ProjectsPage", label: "Projects" },
   ];
+
+  // const [darkMode, setDarkMode] = useState(() => {})
 
   return (
     <div className={styles.main}>

@@ -18,7 +18,10 @@ const HomePage = () => {
                 J'ai grandi à Dunkerque, dans le Nord. Mon parcours scolaire
                 s'est terminé à la fac (licence STAPS). Suite à cela, j'ai vécu
                 pendant quelques années de petits boulots (maître-nageur,
-                ambulancier, ...).
+                ambulancier, ...). Lorem ipsum dolor sit, amet consectetur
+                adipisicing elit. Quidem tempore adipisci excepturi neque,
+                ipsum, saepe dolorem hic eum corporis sequi quam voluptatem.
+                Enim, doloribus. Autem quod reprehenderit dolor. Est, at?
               </p>
               <p className={styles.section}>
                 Mais je voulais me retrouver dans un secteur qui me passionne

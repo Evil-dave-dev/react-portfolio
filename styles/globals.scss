@@ -1,14 +1,16 @@
-@use "./abstracts" as *;
+@use "./breakpoints" as *;
+@use "sass:map";
 @import "~normalize.css";
 
 * {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Inter", sans-serif;
   box-sizing: border-box;
 }
 
 html {
   font-size: 55%;
   color: hsl(var(--foreground));
+  transition: background-color 0.3s, color 0.3s;
   @include breakpoint(medium) {
     font-size: 62.5%;
   }
@@ -16,31 +18,39 @@ html {
 
 $font-sizes: (
   h1: (
-    var(--h1),
+    mobile: var(--48),
+    desktop: var(--80),
   ),
   h2: (
-    var(--h2),
+    mobile: var(--48),
+    desktop: var(--60),
   ),
   h3: (
-    var(--h3),
+    mobile: var(--32),
+    desktop: var(--48),
   ),
   h4: (
-    var(--h4),
+    mobile: var(--24),
+    desktop: var(--40),
   ),
   h5: (
-    var(--h5),
+    mobile: var(--20),
+    desktop: var(--32),
   ),
   h6: (
-    var(--h6),
+    mobile: var(--18),
+    desktop: var(--24),
   ),
 );
 
 @each $header, $sizes in $font-sizes {
   #{$header} {
-    font-size: $sizes;
-    font-family: "Anton", sans-serif;
+    font-size: map.get($sizes, mobile);
     color: hsl(var(--foreground));
     margin: 0;
+    @include breakpoint(medium) {
+      font-size: map.get($sizes, desktop);
+    }
   }
 }
 
@@ -53,22 +63,18 @@ i,
 u,
 em,
 label {
-  font-family: "Open Sans", sans-serif;
+  font-size: var(--15);
   color: hsl(var(--foreground));
-  font-size: var(--p);
   line-height: 1.2;
   text-decoration: none;
   margin: 0;
+  @include breakpoint(medium) {
+    font-size: var(--15);
+  }
 }
 
 a {
   color: hsl(var(--link));
-}
-
-input,
-textarea {
-  font-family: "Open Sans", sans-serif;
-  font-size: var(--p);
 }
 
 textarea {

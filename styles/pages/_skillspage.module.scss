@@ -1,4 +1,4 @@
-@use "../abstracts" as *;
+@use "../breakpoints" as *;
 
 .main {
   padding: 8rem 2.8rem;
@@ -18,37 +18,45 @@
   gap: 0.8rem;
 }
 
-.container {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 3.2rem;
-  @include breakpoint(small) {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
 .skills {
-  display: flex;
-  flex-direction: column;
-  gap: 1.6rem;
-  &_title {
-    margin-bottom: 2.4rem;
-  }
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  gap: 1rem;
 }
 
 .skill {
-  transition: 0.15s ease;
+  font-size: var(--16);
+  font-weight: 600;
+  color: hsl(var(--card-foreground));
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1.4rem;
+  border-radius: 1rem;
   background-color: hsl(var(--card));
   border: 1px solid hsl(var(--border));
-  color: hsl(var(--card-foreground));
-  border-radius: 0.5rem;
-  padding: 1.2rem 2rem;
-  cursor: pointer;
-  &_content {
-    display: flex;
-    gap: 1.2rem;
+  @include breakpoint(x-small) {
+    padding: 2.4rem;
+    gap: 2.4rem;
+  }
+  &_iconContent {
+    @include breakpoint(x-small) {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
   }
   &_icon {
-    flex-shrink: 0;
+    width: 4rem;
+    height: 4rem;
+    @include breakpoint(x-small) {
+      width: 10rem;
+      height: 10rem;
+    }
+  }
+  & > :nth-child(2) {
+    flex-grow: 1;
   }
 }

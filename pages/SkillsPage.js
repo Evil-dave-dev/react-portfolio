@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import {
   Navbar,
   HtmlIcon,
@@ -17,98 +18,64 @@ const SkillsPage = () => {
     frontend: [
       {
         link: "https://developer.mozilla.org/fr/docs/Web/HTML",
-        icon: <HtmlIcon size={40} className={styles.skill_icon} />,
-        presentation: (
-          <>
-            <Codeline>HTML</Codeline> est le langage de balisage que j'ai appris
-            en formation web designer
-          </>
-        ),
+        icon: <HtmlIcon className={styles.skill_icon} />,
+        title: "HTML",
+        type: <Codeline>design</Codeline>,
       },
       {
         link: "https://developer.mozilla.org/fr/docs/Web/CSS",
-        icon: <CssIcon size={40} className={styles.skill_icon} />,
-        presentation: (
-          <>
-            <Codeline>CSS</Codeline> est le langage informatique qui décrit la
-            présentation des documents HTML que j'ai découvert en meme temps que
-            le <Codeline>HTML</Codeline>
-          </>
-        ),
+        icon: <CssIcon className={styles.skill_icon} />,
+        title: "CSS",
+        type: <Codeline>design</Codeline>,
       },
       {
         link: "https://developer.mozilla.org/fr/docs/Web/JavaScript",
-        icon: <JavascriptIcon size={40} className={styles.skill_icon} />,
-        presentation: (
-          <>
-            <Codeline>Javascript</Codeline> est un langage de script léger,
-            orienté objet, principalement connu comme le langage de script des
-            pages web
-          </>
-        ),
+        icon: <JavascriptIcon className={styles.skill_icon} />,
+        title: "javascript",
+        type: <Codeline>design</Codeline>,
       },
       {
-        link: "/",
-        icon: <ReactIcon size={40} className={styles.skill_icon} />,
-        presentation: (
-          <>
-            <Codeline>React</Codeline> est une bibliothèque open source
-            JavaScript pour créer des interfaces utilisateurs
-          </>
-        ),
+        link: "https://fr.react.dev/",
+        icon: <ReactIcon className={styles.skill_icon} />,
+        title: "react",
+        type: <Codeline>design</Codeline>,
       },
       {
-        link: "/",
-        icon: "",
-        presentation: (
-          <>
-            <Codeline>Next</Codeline> est une bibliothèque open source
-            JavaScript pour créer des interfaces utilisateurs
-          </>
-        ),
+        link: "https://nextjs.org/",
+        icon: <ReactIcon className={styles.skill_icon} />,
+        title: "next",
+        type: <Codeline>design</Codeline>,
       },
     ],
     backend: [
       {
         link: "https://nodejs.org/fr",
-        icon: <NodejsIcon size={40} className={styles.skill_icon} />,
-        presentation: (
-          <>
-            <Codeline>NodeJS</Codeline> est une plateforme logicielle libre en
-            JavaScript, orientée vers les applications réseau évènementielles
-            hautement concurrentes qui doivent pouvoir monter en charge
-          </>
-        ),
+        icon: <NodejsIcon className={styles.skill_icon} />,
+        title: "NodeJS",
+        type: <Codeline>backend</Codeline>,
       },
       {
         link: "https://expressjs.com/fr/",
-        icon: <ExpressIcon size={40} className={styles.skill_icon} />,
-        presentation: (
-          <>
-            <Codeline>Express JS</Codeline> est un framework pour construire des
-            applications web basées sur Node.js
-          </>
-        ),
+        icon: <ExpressIcon size={80} className={styles.skill_icon} />,
+        title: "Express JS",
+        type: <Codeline>backend</Codeline>,
       },
       {
         link: "https://www.mongodb.com/fr-fr",
-        icon: <MongodbIcon size={40} className={styles.skill_icon} />,
-        presentation: (
-          <>
-            <Codeline>MongoDB</Codeline> est un système de gestion de base de
-            données orienté documents
-          </>
-        ),
+        icon: <MongodbIcon className={styles.skill_icon} />,
+        title: "mongoDB",
+        type: <Codeline>backend</Codeline>,
       },
     ],
   };
 
-  const Skill = ({ icon, presentation }) => (
-    <li className={styles.skill}>
-      <span className={styles.skill_content}>
-        {icon}
-        <span>{presentation}</span>
-      </span>
+  const Skill = ({ icon, link, title, type }) => (
+    <li>
+      <a href={link} target="_blank" className={styles.skill}>
+        <div className={styles.skill_iconContent}>{icon}</div>{" "}
+        <span>{title}</span>
+        {type}
+      </a>
     </li>
   );
 
@@ -127,26 +94,13 @@ const SkillsPage = () => {
     <>
       <Navbar />
       <main className={styles.main}>
-        <h2 className={styles.title}>Skills Page</h2>
+        <h2 className={styles.title}>Tech Stack</h2>
         <section className={styles.intro}>
-          <p>
-            Je suis un développeur web qui a pu travailler sur différentes
-            technos full stack, mais je suis particulièrement axé sur le{" "}
-            <strong>développement front end</strong>.
-          </p>
-          <p>
-            Sur cette page, vous pourrez voir toute la stack technique que
-            j'utilise pour mes développements.
-          </p>
-          <p>
-            Même si je travaille sur les 2 versants du développement web, mon
-            appétance va tout particulièrement vers le front end avec lequel
-            j'ai le plus d'affinité.
-          </p>
+          <p>The dev tools, apps, devices, and games I use and play.</p>
         </section>
         <div className={styles.container}>
           <SkillSection title="frontend" skills={skills.frontend} />
-          <SkillSection title="backend" skills={skills.backend} />
+          <SkillSection title="apps" skills={skills.backend} />
         </div>
         <ContactButton />
       </main>
