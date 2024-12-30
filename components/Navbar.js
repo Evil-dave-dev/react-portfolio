@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useState } from "react";
 import styles from "../styles/components/_navbar.module.scss";
 
 const Navbar = () => {
@@ -12,14 +11,14 @@ const Navbar = () => {
     { href: "/ProjectsPage", label: "Projects" },
   ];
 
-  // const [darkMode, setDarkMode] = useState(() => {})
-
   return (
     <div className={styles.main}>
       <ul className={styles.content}>
         <li className={styles.logo_content}>
-          <Link href="/">
-            <img src="logo.png" alt="logo" className={styles.logo} />
+          <Link href="/" legacyBehavior>
+            <a className={styles.link}>
+              <img src="logo.png" alt="logo" className={styles.logo} />
+            </a>
           </Link>
         </li>
         {navLinks.map((link) => (

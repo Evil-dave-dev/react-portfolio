@@ -63,13 +63,13 @@ i,
 u,
 em,
 label {
-  font-size: var(--15);
+  font-size: var(--16);
   color: hsl(var(--foreground));
   line-height: 1.2;
   text-decoration: none;
   margin: 0;
   @include breakpoint(medium) {
-    font-size: var(--15);
+    font-size: var(--16);
   }
 }
 

@@ -15,7 +15,10 @@
 .logo {
   width: 100%;
   &_content {
-    flex: 0 0 7rem;
+    flex: 0 0 8rem;
+    & .link {
+      padding: 0.4rem 2rem 0.4rem 0rem;
+    }
   }
 }
 

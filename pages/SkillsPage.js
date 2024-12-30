@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import {
   Navbar,
   HtmlIcon,
@@ -9,13 +8,18 @@ import {
   ExpressIcon,
   MongodbIcon,
   Codeline,
+  NextIcon,
+  SlackIcon,
+  ContactButton,
+  ChromeIcon,
+  DiscordIcon,
+  VsCodeIcon,
 } from "../components";
-import ContactButton from "../components/ContactButton";
 import styles from "../styles/pages/_skillspage.module.scss";
 
 const SkillsPage = () => {
   const skills = {
-    frontend: [
+    dev: [
       {
         link: "https://developer.mozilla.org/fr/docs/Web/HTML",
         icon: <HtmlIcon className={styles.skill_icon} />,
@@ -42,12 +46,10 @@ const SkillsPage = () => {
       },
       {
         link: "https://nextjs.org/",
-        icon: <ReactIcon className={styles.skill_icon} />,
+        icon: <NextIcon className={styles.skill_icon} />,
         title: "next",
         type: <Codeline>design</Codeline>,
       },
-    ],
-    backend: [
       {
         link: "https://nodejs.org/fr",
         icon: <NodejsIcon className={styles.skill_icon} />,
@@ -56,8 +58,8 @@ const SkillsPage = () => {
       },
       {
         link: "https://expressjs.com/fr/",
-        icon: <ExpressIcon size={80} className={styles.skill_icon} />,
-        title: "Express JS",
+        icon: <ExpressIcon className={styles.skill_icon} />,
+        title: "ExpressJS",
         type: <Codeline>backend</Codeline>,
       },
       {
@@ -65,6 +67,32 @@ const SkillsPage = () => {
         icon: <MongodbIcon className={styles.skill_icon} />,
         title: "mongoDB",
         type: <Codeline>backend</Codeline>,
+      },
+    ],
+    apps: [
+      {
+        link: "https://nodejs.org/fr",
+        icon: <SlackIcon className={styles.skill_icon} />,
+        title: "Slack",
+        type: <Codeline>Communication</Codeline>,
+      },
+      {
+        link: "https://expressjs.com/fr/",
+        icon: <ChromeIcon className={styles.skill_icon} />,
+        title: "Chrome",
+        type: <Codeline>Browser</Codeline>,
+      },
+      {
+        link: "https://www.mongodb.com/fr-fr",
+        icon: <DiscordIcon className={styles.skill_icon} />,
+        title: "Discord",
+        type: <Codeline>Communication</Codeline>,
+      },
+      {
+        link: "https://www.mongodb.com/fr-fr",
+        icon: <VsCodeIcon className={styles.skill_icon} />,
+        title: "VScode",
+        type: <Codeline>Editeur</Codeline>,
       },
     ],
   };
@@ -99,8 +127,8 @@ const SkillsPage = () => {
           <p>The dev tools, apps, devices, and games I use and play.</p>
         </section>
         <div className={styles.container}>
-          <SkillSection title="frontend" skills={skills.frontend} />
-          <SkillSection title="apps" skills={skills.backend} />
+          <SkillSection title="Dev and design" skills={skills.dev} />
+          <SkillSection title="Apps" skills={skills.apps} />
         </div>
         <ContactButton />
       </main>
