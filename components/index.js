@@ -21,3 +21,7 @@ export { default as SlackIcon } from "./icons/SlackIcon";
 export { default as ChromeIcon } from "./icons/ChromeIcon";
 export { default as DiscordIcon } from "./icons/DiscordIcon";
 export { default as VsCodeIcon } from "./icons/VsCodeIcon";
+export { default as FigmaIcon } from "./icons/FigmaIcon";
+export { default as VercelIcon } from "./icons/VercelIcon";
+export { default as ReduxIcon } from "./icons/ReduxIcon";
+export { default as ReactHookFormIcon } from "./icons/ReactHookFormIcon";

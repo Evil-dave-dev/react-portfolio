@@ -29,8 +29,10 @@
 
 .skills {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+  grid-auto-rows: 20rem;
+  align-items: stretch;
+  grid-gap: 1rem;
   &_title {
     margin-bottom: 1.6rem;
     @include breakpoint(medium) {
@@ -41,19 +43,19 @@
 
 .skill {
   font-size: var(--12);
-  font-weight: 600;
   color: hsl(var(--card-foreground));
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  height: 20rem;
-  padding: 1.8rem;
+  padding: 1.4rem;
+  height: 100%;
   border-radius: 1rem;
   background-color: hsl(var(--card));
   border: 1px solid hsl(var(--border));
   & > span {
     font-size: var(--12);
+    font-weight: 600;
   }
   &_iconContent {
     display: flex;
